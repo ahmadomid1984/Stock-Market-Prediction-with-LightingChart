@@ -53,10 +53,10 @@ Data can be sourced from financial databases like Yahoo Finance, Alpha Vantage, 
 ```import pandas as pd```
 
 ```# Load the dataset```
-```df_google = pd.read_csv('./CsvPackage/Alphabet Inc - Class A (GOOGL).csv')```
-```df_google.rename(columns={"Date":"date","Open":"open","High":"high","Low":"low","Close":"close"}, inplace=True)```
-```df_google['date'] = pd.to_datetime(df_google.date)```
-```df_google.sort_values(by='date', inplace=True)```
+```df_googl = pd.read_csv('./CsvPackage/Alphabet Inc - Class A (GOOGL).csv')```
+```df_googl.rename(columns={"Date":"date","Open":"open","High":"high","Low":"low","Close":"close"}, inplace=True)```
+```df_googl['date'] = pd.to_datetime(df_googl.date)```
+```df_googl.sort_values(by='date', inplace=True)```
 
 ### 4.2 Handling and preprocessing the data
 Preprocessing involves cleaning the data, handling missing values, and transforming it for machine learning models.
@@ -65,7 +65,7 @@ Preprocessing involves cleaning the data, handling missing values, and transform
 
 ```specified_start_date = pd.to_datetime('2020-01-01')```
 ```specified_end_date = pd.to_datetime('2024-05-14')```
-```filtered_df = df_google[(df_google['date'] >= specified_start_date) & (df_google['date'] <= specified_end_date)]```
+```filtered_df = df_googl[(df_googl['date'] >= specified_start_date) & (df_googl['date'] <= specified_end_date)]```
 
 ```# Normalize/scale the close values between 0 and 1```
 ```close_stock_values = filtered_df['close'].values.reshape(-1, 1)```
@@ -82,7 +82,7 @@ Preprocessing involves cleaning the data, handling missing values, and transform
 A tool for creating highly interactive and customizable charts, suitable for financial data visualization.
 
 ![Stacked Bar Chart](./images/Stacked%20Bar%20Chart.png)
-![Grouped Bar Chart](./images/Groupd%20Bar%20Chart.png)
+![Grouped Bar Chart](./images/Grouped%20Bar%20Chart.png)
 ![Line Chart](./images/Line%20Chart.png)
 ![Point Line Chart](./images/Point%20Line%20Chart.png)
 ![Simple Line Chart](./images/Simple%20Line%20Chart.png)
