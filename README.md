@@ -65,7 +65,6 @@ df_googl.sort_values(by='date', inplace=True)
 #### 4.2 Handling and preprocessing the data
 Preprocessing involves cleaning the data, handling missing values, and transforming it for machine learning models.
 
-```python
 from sklearn.preprocessing import MinMaxScaler
 
 specified_start_date = pd.to_datetime('2020-01-01')
