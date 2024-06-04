@@ -74,7 +74,7 @@ Data can be sourced from financial databases like Yahoo Finance, Alpha Vantage, 
 import pandas as pd
 
 # Load the dataset
-df_googl = pd.read_csv('./CsvPackage/Alphabet Inc - Class A (GOOGL).csv')
+df_googl = pd.read_csv('./Alphabet Inc - Class A (GOOGL).csv')
 df_googl.rename(columns={"Date":"date","Open":"open","High":"high","Low":"low","Close":"close"}, inplace=True)
 df_googl['date'] = pd.to_datetime(df_googl.date)
 df_googl.sort_values(by='date', inplace=True)
