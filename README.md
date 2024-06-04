@@ -39,6 +39,22 @@ Install Python from the [official website](https://www.python.org/downloads/) an
 pip install lightningcharts random numpy pandas scikit-learn tensorflow
 ```
 
+```python
+# Importing the libraries and LighteningChart license 
+import lightningchart as lc
+import random
+lc.set_license('P001-ZgAiXcls82XucLjGo1pNDBmgknE/FgAGIi2wGJsKgHy4pMYuLCxrxf4UXnNH-MEQCIE7WrKAMcHSuauBhMtQTwX3JPNSQPhQvdGJFy5GoAArCAiBsiHovJHY6pyh59fLdvj+QT5ld5MbewJXf7NsivQvsUw==')
+
+import math
+import numpy as np
+import pandas as pd
+from sklearn.preprocessing import MinMaxScaler
+from tensorflow.keras.models import Sequential
+from tensorflow.keras.layers import Dense, LSTM, Dropout, Input
+from datetime import datetime
+from sklearn.metrics import mean_squared_error, mean_absolute_error, r2_score
+```
+
 #### 3.2 Overview of Libraries Used
 - **LightningChart**: Advanced data visualization.
 - **NumPy**: Numerical computation.
