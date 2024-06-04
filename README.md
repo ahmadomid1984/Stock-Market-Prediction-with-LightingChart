@@ -52,27 +52,30 @@ Recommended IDEs include Jupyter Notebook, PyCharm, or Visual Studio Code.
 #### 4.1 How to Load the Data Files
 Data can be sourced from financial databases like Yahoo Finance, Alpha Vantage, and Quandl.
 
-```import pandas as pd```
+```python
+import pandas as pd
 
-```# Load the dataset```
-```df_googl = pd.read_csv('./CsvPackage/Alphabet Inc - Class A (GOOGL).csv')```
-```df_googl.rename(columns={"Date":"date","Open":"open","High":"high","Low":"low","Close":"close"}, inplace=True)```
-```df_googl['date'] = pd.to_datetime(df_googl.date)```
-```df_googl.sort_values(by='date', inplace=True)```
+# Load the dataset
+df_googl = pd.read_csv('./CsvPackage/Alphabet Inc - Class A (GOOGL).csv')
+df_googl.rename(columns={"Date":"date","Open":"open","High":"high","Low":"low","Close":"close"}, inplace=True)
+df_googl['date'] = pd.to_datetime(df_googl.date)
+df_googl.sort_values(by='date', inplace=True)
+
 
 #### 4.2 Handling and preprocessing the data
 Preprocessing involves cleaning the data, handling missing values, and transforming it for machine learning models.
 
-```from sklearn.preprocessing import MinMaxScaler```
+```python
+from sklearn.preprocessing import MinMaxScaler
 
-```specified_start_date = pd.to_datetime('2020-01-01')```
-```specified_end_date = pd.to_datetime('2024-05-14')```
-```filtered_df = df_googl[(df_googl['date'] >= specified_start_date) & (df_googl['date'] <= specified_end_date)]```
+specified_start_date = pd.to_datetime('2020-01-01')
+specified_end_date = pd.to_datetime('2024-05-14')
+filtered_df = df_googl[(df_googl['date'] >= specified_start_date) & (df_googl['date'] <= specified_end_date)]
 
-```# Normalize/scale the close values between 0 and 1```
-```close_stock_values = filtered_df['close'].values.reshape(-1, 1)```
-```scaler = MinMaxScaler(feature_range=(0, 1))```
-```normalized_close_values = scaler.fit_transform(close_stock_values)```
+# Normalize/scale the close values between 0 and 1
+close_stock_values = filtered_df['close'].values.reshape(-1, 1)
+scaler = MinMaxScaler(feature_range=(0, 1))
+normalized_close_values = scaler.fit_transform(close_stock_values)
 
 #### 4.3 Validation of the Study
 - **Training Data Metrics**: Include R² Score, RMSE, MSE, and MAE to showcase model accuracy.
