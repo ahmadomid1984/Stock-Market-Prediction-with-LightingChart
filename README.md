@@ -25,6 +25,8 @@ LightningChart Python is a high-performance data visualization library designed 
 - **Line Chart**: Used for visualizing changes in stock prices over time.
 - **Stacked Bar Chart and Grouped Bar Chart**: For comparing different components of stock data.
 
+![LighteningChart](./images/LightningChart.png)
+
 #### 2.3 Performance Characteristics
 Key performance characteristics include real-time data updating, high refresh rates, and efficient data handling, essential for financial applications where data needs to be processed and visualized in real-time.
 
