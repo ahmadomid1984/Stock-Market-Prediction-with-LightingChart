@@ -43,7 +43,7 @@ pip install lightningcharts random numpy pandas scikit-learn tensorflow
 # Importing the libraries and LighteningChart license 
 import lightningchart as lc
 import random
-lc.set_license('P001-ZgAiXcls82XucLjGo1pNDBmgknE/FgAGIi2wGJsKgHy4pMYuLCxrxf4UXnNH-MEQCIE7WrKAMcHSuauBhMtQTwX3JPNSQPhQvdGJFy5GoAArCAiBsiHovJHY6pyh59fLdvj+QT5ld5MbewJXf7NsivQvsUw==')
+lc.set_license('my-license-key')
 
 import math
 import numpy as np
