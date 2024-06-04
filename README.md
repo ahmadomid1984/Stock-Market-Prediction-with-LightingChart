@@ -35,7 +35,9 @@ Key performance characteristics include real-time data updating, high refresh ra
 #### 3.1 Installing Python and Necessary Libraries
 Install Python from the [official website](https://www.python.org/downloads/) and use pip to install necessary libraries including LightningChart Python from PyPI. To get the [documentation](https://lightningchart.com/python-charts/docs/) and the [license](https://lightningchart.com/python-charts/), please visit [LighteningChart Website](https://lightningchart.com/).
 
-```pip install lightningcharts random numpy pandas scikit-learn tensorflow```
+```python
+pip install lightningcharts random numpy pandas scikit-learn tensorflow
+```
 
 #### 3.2 Overview of Libraries Used
 - **LightningChart**: Advanced data visualization.
@@ -66,6 +68,7 @@ df_googl.sort_values(by='date', inplace=True)
 #### 4.2 Handling and preprocessing the data
 Preprocessing involves cleaning the data, handling missing values, and transforming it for machine learning models.
 
+```python
 from sklearn.preprocessing import MinMaxScaler
 
 specified_start_date = pd.to_datetime('2020-01-01')
@@ -76,6 +79,7 @@ filtered_df = df_googl[(df_googl['date'] >= specified_start_date) & (df_googl['d
 close_stock_values = filtered_df['close'].values.reshape(-1, 1)
 scaler = MinMaxScaler(feature_range=(0, 1))
 normalized_close_values = scaler.fit_transform(close_stock_values)
+```
 
 #### 4.3 Validation of the Study
 - **Training Data Metrics**: Include R² Score, RMSE, MSE, and MAE to showcase model accuracy.
@@ -102,38 +106,42 @@ A tool for creating highly interactive and customizable charts, suitable for fin
 #### 5.2 Creating the charts
 Create various charts using LightningChart Python to visualize stock data effectively.
 
-```import lightningchart as lc```
-```import random```
-```from datetime import datetime```
+```python
+import lightningchart as lc
+import random
+from datetime import datetime
 
-```# Initialize LightningChart and set the license key```
-```lc.set_license('my-license-key')```
+# Initialize LightningChart and set the license key
+lc.set_license('my-license-key')
 
-```chart = lc.ChartXY(title='Actual vs Predicted Close Prices')```
+chart = lc.ChartXY(title='Actual vs Predicted Close Prices')
+```
 
 #### 5.3 Customizing visualizations
 LightningChart offers extensive customization options, including adjusting colors, adding markers, or integrating real-time data updates.
 
-```# Dispose the default x-axis and create a high precision datetime axis```
-```chart.get_default_x_axis().dispose()```
-```axis_x = chart.add_x_axis(axis_type='linear-highPrecision')```
-```axis_x.set_tick_strategy('DateTime')```
+```python
+# Dispose the default x-axis and create a high precision datetime axis
+chart.get_default_x_axis().dispose()
+axis_x = chart.add_x_axis(axis_type='linear-highPrecision')
+axis_x.set_tick_strategy('DateTime')
 
-```# Convert datetime to timestamps for plotting```
-```actual_dates = filtered_df['date'].tolist()```
-```actual_close = filtered_df['close'].tolist()```
-```actual_date_timestamps = [x.timestamp() * 1000 for x in actual_dates]```
+# Convert datetime to timestamps for plotting
+actual_dates = filtered_df['date'].tolist()
+actual_close = filtered_df['close'].tolist()
+actual_date_timestamps = [x.timestamp() * 1000 for x in actual_dates]
 
-```# Plot actual prices```
-```series_actual = chart.add_line_series()```
-```series_actual.add(x=actual_date_timestamps, y=actual_close)```
-```series_actual.set_name('Actual Prices')```
+# Plot actual prices
+series_actual = chart.add_line_series()
+series_actual.add(x=actual_date_timestamps, y=actual_close)
+series_actual.set_name('Actual Prices')
 
-```# Customize the chart```
-```chart.get_default_x_axis().set_title('Date')```
-```chart.get_default_y_axis().set_title('Stock Price')```
-```chart.add_legend()```
-```chart.open()```
+# Customize the chart
+chart.get_default_x_axis().set_title('Date')
+chart.get_default_y_axis().set_title('Stock Price')
+chart.add_legend()
+chart.open()
+```
 
 ### 6. Conclusion
 
