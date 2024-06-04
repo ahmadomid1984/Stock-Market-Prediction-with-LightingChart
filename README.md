@@ -60,6 +60,7 @@ df_googl = pd.read_csv('./CsvPackage/Alphabet Inc - Class A (GOOGL).csv')
 df_googl.rename(columns={"Date":"date","Open":"open","High":"high","Low":"low","Close":"close"}, inplace=True)
 df_googl['date'] = pd.to_datetime(df_googl.date)
 df_googl.sort_values(by='date', inplace=True)
+```
 
 
 #### 4.2 Handling and preprocessing the data
