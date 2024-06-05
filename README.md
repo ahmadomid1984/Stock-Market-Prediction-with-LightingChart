@@ -33,7 +33,7 @@ Key performance characteristics include real-time data updating, high refresh ra
 ### 3. Setting Up Python Environment
 
 #### 3.1 Installing Python and Necessary Libraries
-Install Python from the [official website](https://www.python.org/downloads/) and use pip to install necessary libraries including LightningChart Python from PyPI. To get the [documentation](https://lightningchart.com/python-charts/docs/) and the [license](https://lightningchart.com/python-charts/), please visit [LighteningChart Website](https://lightningchart.com/).
+Install Python from the [official website](https://www.python.org/downloads/) and use pip to install necessary libraries including LightningChart Python from PyPI. To get the [documentation](https://lightningchart.com/python-charts/docs/) and the [license](https://lightningchart.com/python-charts/), please visit [LightningChart Website](https://lightningchart.com/).
 
 ```python
 pip install lightningcharts random numpy pandas scikit-learn tensorflow
